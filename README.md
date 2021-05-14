@@ -2,6 +2,9 @@
 
 A downloader for Amar Ujala Hindi newspaper. Downloads images from the website and converts them into a pdf file. Only two sections are downloaded: _**Main City**_ and _**My City**_ pages.
 
+## Requirements
+* Python pillow library.
+
 ## Usage
 There are three actions and two modes for the downloader.
 
@@ -22,7 +25,22 @@ Default:
 * _-e, --end:_ Specifies the end date in yyyy/mm/dd format. Default is current date.
 
 # City Codes
-**Will be added soon.**
+City | Code
+------ | -------
+Agra | ac
+Aligarh | ct
+Ayodhya | fz
+Chandigarh | cc
+Dehradun | dc
+Delhi | dl
+Gurugram | gr
+Jammu | cj
+Kanpur | kc
+Lucknow | lc
+Meerut | cm
+Noida | nd
+
+*More will be added later.*
 
 ## Examples
 *Configuration:* <br/>
