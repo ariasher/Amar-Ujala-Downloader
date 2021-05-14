@@ -1,6 +1,6 @@
 # Amar Ujala Downloader
 
-A downloader for Amar Ujala Hindi newspaper. Downloads images from the website and converts them into a pdf file. Only two sections are downloaded: _*Main City*_ and _*My City*_ pages.
+A downloader for Amar Ujala Hindi newspaper. Downloads images from the website and converts them into a pdf file. Only two sections are downloaded: _**Main City**_ and _**My City**_ pages.
 
 ## Usage
 There are three actions and two modes for the downloader.
@@ -11,28 +11,30 @@ There are three actions and two modes for the downloader.
 - _prefix_: prefix for the pdf file.
 - *city_code*: code of the city of which the newspaper is to be downloaded.
 
-*_reset:_* Resets the configuration to its default settings.
-           Default:
-           * path: Current directory where this downloader is saved. 
-           * prefix: auj
-           * city: lc
+**_reset:_** Resets the configuration to its default settings.
+Default:
+* path: Current directory where this downloader is saved. 
+* prefix: auj
+* city: lc
 
-*_dl_*: Used to indicate download action.
-        Two modes: Single, Range. If both start and end dates are provided, it will work in range mode.
-        * -s, --start: Specifies the start date in yyyy/mm/dd format. Default is current date.
-        * -e, --end: Specifies the end date in yyyy/mm/dd format. Default is current date.
+**_dl_**: Used to indicate download action. There are two modes: **Single** and **Range**. If both _start_ and _end_ dates are provided, it will work in range mode.
+* -s, --start: Specifies the start date in yyyy/mm/dd format. Default is current date.
+* -e, --end: Specifies the end date in yyyy/mm/dd format. Default is current date.
+
+# City Codes
+**Will be added soon.**
 
 ## Examples
-*Configuration:*
+*Configuration:* <br/>
 ``` python auj.py conf```
 
-*Reset Configurations:*
+*Reset Configurations:* <br/>
 ``` python auj.py reset```
 
-*Download:*
-Current date - ```python auj.py dl```
-Particular date - ```python auj.py dl -s 2021/05/03```
-Date range - ```python auj.py dl -s 2021/05/01 -e 2021/05/10```
+*Download:* <br/>
+**Current date -** ```python auj.py dl``` <br/>
+**Particular date -** ```python auj.py dl -s 2021/05/03``` <br/>
+**Date range -** ```python auj.py dl -s 2021/05/01 -e 2021/05/10``` <br/>
 
 ## Disclaimer:
 _Only meant for personal use and not for commercial purpose. If it violates any TnC, message me to take it down._
