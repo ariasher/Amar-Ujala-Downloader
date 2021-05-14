@@ -54,5 +54,5 @@ Noida | nd
 **Particular date -** ```python auj.py dl -s 2021/05/03``` <br/>
 **Date range -** ```python auj.py dl -s 2021/05/01 -e 2021/05/10``` <br/>
 
-## Disclaimer:
+## Disclaimer
 _Only meant for personal use and not for commercial purpose. If it violates any TnC, message me to take it down._
