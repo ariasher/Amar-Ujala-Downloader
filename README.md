@@ -6,11 +6,10 @@ A downloader for Amar Ujala Hindi newspaper. Downloads images from the website a
 There are three actions and two modes for the downloader.
 
 ### Actions
-**_conf:_** This action is used to configure the downloader. <br />
-        There are three settings: <br />
-        - path: Specifies the path where the temporary files and pdf will be saved.
-        - prefix: prefix for the pdf file.
-        - city_code: code of the city of which the newspaper is to be downloaded.
+**_conf:_** This action is used to configure the downloader. There are three settings: <br />
+- _path_: Specifies the path where the temporary files and pdf will be saved.
+- _prefix_: prefix for the pdf file.
+- *city_code*: code of the city of which the newspaper is to be downloaded.
 
 *_reset:_* Resets the configuration to its default settings.
            Default:
