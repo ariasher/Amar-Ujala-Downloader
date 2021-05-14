@@ -15,7 +15,7 @@ class AUJCleaner():
               The data is an object of dictionary, tuple or list type which includes the 
               directories which were created during the download of the newspaper.
 
-              If data is a type of dictionary with KEY(string dates) and VALUES(directories)
+              If data is a type of dictionary with KEY(string - dates) and VALUES(string - directories)
               then the values are extracted by itself but the flag should be set to True.
         
         Optional: 
