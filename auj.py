@@ -3,6 +3,7 @@ from auj_lib.auj_downloader import AUJDownloader
 from auj_lib.auj_cleaner import AUJCleaner
 from auj_lib.auj_config import AUJConfig
 from argparse import Action, ArgumentParser
+import datetime
 
 # Global variables for actions.
 __ACTIONS_DOWNLOAD = "dl"
@@ -81,7 +82,13 @@ def download(args):
     downloader = AUJDownloader(conf.config)
 
     # Read download arguments.
-    start = tuple(map(int, args.start.split("/")))
+    # Check if start date is mentioned or not
+    start = None
+    if args.start == None:
+        start = datetime.date.year, datetime.date.month, datetime.date.day
+    else:
+        start = tuple(map(int, args.start.split("/")))
+    
     end = None
     if args.end is not None:
         end = tuple(map(int, args.end.split("/")))
