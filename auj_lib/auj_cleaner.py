@@ -30,7 +30,7 @@ class AUJCleaner():
         else:
             dirs = data
         
-        self.data=dirs
+        self.__data=dirs
 
     def clean(self, verbose:bool = False) -> None:
         '''
@@ -41,7 +41,7 @@ class AUJCleaner():
               This flag is used to show which directories have been created. Default: False.
         '''
 
-        for d in self.data:
+        for d in self.__data:
             rmtree(d, ignore_errors=True)
             
             if verbose:
