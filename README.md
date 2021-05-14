@@ -1,12 +1,12 @@
 # Amar Ujala Downloader
 
-A downloader for Amar Ujala Hindi newspaper. Downloads images from the website and converts them into a pdf file. Only two sections are downloaded: _Main City_ and _My City_ pages.
+A downloader for Amar Ujala Hindi newspaper. Downloads images from the website and converts them into a pdf file. Only two sections are downloaded: _*Main City*_ and _*My City*_ pages.
 
 ## Usage
 There are three actions and two modes for the downloader.
 
 ### Actions
-*_conf:_* This action is used to configure the downloader. 
+*_conf:_* This action is used to configure the downloader. <br />
         There are three settings:
         * path: Specifies the path where the temporary files and pdf will be saved.
         * prefix: prefix for the pdf file.
@@ -23,7 +23,7 @@ There are three actions and two modes for the downloader.
         * -s, --start: Specifies the start date in yyyy/mm/dd format. Default is current date.
         * -e, --end: Specifies the end date in yyyy/mm/dd format. Default is current date.
 
-## Examples:
+## Examples
 *Configuration:*
 ``` python auj.py conf```
 
@@ -36,4 +36,4 @@ Particular date - ```python auj.py dl -s 2021/05/03```
 Date range - ```python auj.py dl -s 2021/05/01 -e 2021/05/10```
 
 ## Disclaimer:
-_Only meant for personal use and not for commercial purpose. If it violates the TnC, message me to take it down._
+_Only meant for personal use and not for commercial purpose. If it violates any TnC, message me to take it down._
