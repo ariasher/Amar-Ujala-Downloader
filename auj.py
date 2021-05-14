@@ -42,11 +42,11 @@ def configure():
     Start configuration process.
     '''
     
-    auj_conf = AUJConfig()
+    conf = AUJConfig()
     action = input("Default configuration is created. Modify default settings? [Y/N]: ")
     
     if len(action) == 1 and action.lower() == "y":
-        config = auj_conf.config.copy()
+        config = conf.config.copy()
 
         print("#" * 30)
         print("\n")
@@ -70,15 +70,15 @@ def configure():
         if len(city_code) != 0:
             config["city_code"] = city_code
         
-        auj_conf.modify(config)
+        conf.modify(config)
 
 def download(args):
     '''
     Start download process.
     '''
 
-    auj_config = AUJConfig()
-    downloader = AUJDownloader(auj_config)
+    conf = AUJConfig()
+    downloader = AUJDownloader(conf.config)
 
     # Read download arguments.
     start = tuple(map(int, args.start.split("/")))
@@ -87,10 +87,10 @@ def download(args):
         end = tuple(map(int, args.end.split("/")))
 
     # Download Images.
-    download_metadata = downloader.download(start, end=end, output_dir=args.path)
+    download_metadata = downloader.download(start, end=end)
 
     # Generate pdf files.
-    combiner = AUJCombiner(download_metadata)
+    combiner = AUJCombiner(download_metadata, conf.config)
     combiner.generate_pdfs()
 
     # Start clean-up process.

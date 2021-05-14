@@ -36,8 +36,9 @@ class AUJCombiner():
 
         try:
             for date in dates:
-                path = self.data[date]
-                pdf_name = f"{path}../{prefix}_{date}.pdf"
+                path = self.__data[date]
+                save_path = config["path"]
+                pdf_name = f"{save_path}/{prefix}_{date}.pdf"
 
                 # List all the images in that folder.
                 files = listdir(path)
