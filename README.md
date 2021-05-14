@@ -13,13 +13,13 @@ There are three actions and two modes for the downloader.
 
 **_reset:_** Resets the configuration to its default settings.
 Default:
-* path: Current directory where this downloader is saved. 
-* prefix: auj
-* city: lc
+* _path:_ Current directory where this downloader is saved. 
+* _prefix:_ auj
+* *city_code:* lc
 
 **_dl_**: Used to indicate download action. There are two modes: **Single** and **Range**. If both _start_ and _end_ dates are provided, it will work in range mode.
-* -s, --start: Specifies the start date in yyyy/mm/dd format. Default is current date.
-* -e, --end: Specifies the end date in yyyy/mm/dd format. Default is current date.
+* _-s, --start:_ Specifies the start date in yyyy/mm/dd format. Default is current date.
+* _-e, --end:_ Specifies the end date in yyyy/mm/dd format. Default is current date.
 
 # City Codes
 **Will be added soon.**
