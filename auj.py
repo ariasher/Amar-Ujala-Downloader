@@ -7,6 +7,7 @@ from argparse import Action, ArgumentParser
 # Global variables for actions.
 __ACTIONS_DOWNLOAD = "dl"
 __ACTIONS_CONFIGURATION = "conf"
+__ACTIONS_RESET = "reset"
 
 def get_parser():
     '''
@@ -19,13 +20,22 @@ def get_parser():
 
     parser = ArgumentParser(description="Downloads Amar Ujala newspaper.")
     parser.add_argument("action", metavar="action", type=str, help="Action type: \n \
-                                                                    conf: Add/Modify Configuration \n \
-                                                                    dl: Download the webpage. Default date today.")
+                                                                    conf: Add/Modify configuration. \n \
+                                                                    dl: Download the webpage. Default date today. \
+                                                                    reset: Resets to default configuration settings. ")
 
     parser.add_argument("-s", "--start", help="Start date (Used with dl). Format: yyyy/mm/dd")
     parser.add_argument("-e", "--end", help="End date (Used with dl). Format: yyyy/mm/dd")
 
     return parser
+
+def reset():
+    '''
+    Reset to default configuration settings.
+    '''
+
+    conf = AUJConfig()
+    conf.reset()
 
 def configure():
     '''
@@ -38,12 +48,13 @@ def configure():
     if len(action) == 1 and action.lower() == "y":
         config = auj_conf.config.copy()
 
-        print("#" * 12)
+        print("#" * 30)
         print("\n")
         print("Please enter the details carefully. Wrong configuration might result in issues. \n")
         print("Leave any setting blank if you want to use default settings for it. \n")
         print("Refer to Github page for more information. \n")
-        print("#" * 12)
+        print("\n")
+        print("#" * 30)
         print("\n")
 
         path = input("Enter the path where you would like to save the newspaper [Default: Current directory]: ")
@@ -89,7 +100,11 @@ def download(args):
 def main():
     args = get_parser().parse_args()
 
-    if args.action == __ACTIONS_CONFIGURATION:
+    if args.action == __ACTIONS_RESET:
+        reset()
+        print("Reset successful. Please run the script again.")
+
+    elif args.action == __ACTIONS_CONFIGURATION:
         configure()
         print("Configured successfully. Please run the script again with download action.")
 

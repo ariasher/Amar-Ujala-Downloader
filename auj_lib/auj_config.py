@@ -8,7 +8,7 @@ class AUJConfig():
     '''
 
     # Location and file name.
-    __CONFIG_FILE = "../config.json"
+    __CONFIG_FILE = "./config.json"
 
     def __init__(self):
         '''
@@ -80,4 +80,11 @@ class AUJConfig():
         '''
 
         self.__write_config(config)
+
+    def reset(self) -> None:
+        '''
+        Resets the configuration settings to its default.
+        '''
+
+        self.config = self.__create_config()
 
