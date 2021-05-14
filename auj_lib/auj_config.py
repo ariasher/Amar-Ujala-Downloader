@@ -1,5 +1,6 @@
 import json
-import os
+from os import path, getcwd
+
 
 class AUJConfig():
     '''
@@ -7,7 +8,7 @@ class AUJConfig():
     '''
 
     # Location and file name.
-    __CONFIG_FILE = "./config.json"
+    __CONFIG_FILE = "../config.json"
 
     def __init__(self):
         '''
@@ -16,12 +17,13 @@ class AUJConfig():
         Settings:
             path - String: Path where the files will be downloaded.
             prefix - String: Prefix of the newspaper.
+            city_code - String: Code of the city of which the newspaper has to be downloaded.
         '''
 
         # Configuration dictionary.
         self.config = {}
 
-        if not os.path.exists(self.__CONFIG_FILE):
+        if not path.exists(self.__CONFIG_FILE):
             self.config = self.__create_config()
         else:
             self.config = self.__read_config()
@@ -33,19 +35,23 @@ class AUJConfig():
         Required: 
             config[Dictionary]:
               A dictionary with configuration data.
-              Keys - prefix, path
+              Keys - prefix, path, city_code
         '''
+        
         with open(self.__CONFIG_FILE, "w") as config_file:
             json.dump(config, config_file)  
 
     def __create_config(self) -> dict:
         '''
         Creates a configuration file.
+
+        Returns a newly created configuration dictionary.
         '''
 
         config = {
-            "path": os.getcwd(),
-            "prefix": "auj"
+            "path": getcwd(),
+            "prefix": "auj",
+            "city_code": "lc"
         }
 
         self.__write_config(config)
@@ -55,6 +61,8 @@ class AUJConfig():
     def __read_config(self) -> dict:
         '''
         Reads configuration from the configuration file.
+
+        Returns a configuration dictionary.
         '''
 
         config = None

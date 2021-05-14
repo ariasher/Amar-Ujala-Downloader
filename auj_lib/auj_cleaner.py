@@ -1,4 +1,5 @@
-import shutil
+from shutil import rmtree
+
 
 class AUJCleaner():
     '''
@@ -7,6 +8,8 @@ class AUJCleaner():
 
     def __init__(self, data, is_dict:False):
         '''
+        Cleans all the temporary folders and files created.
+
         Requires:
             data[Dictonary/Tuple/List]: 
               The data is an object of dictionary, tuple or list type which includes the 
@@ -39,7 +42,7 @@ class AUJCleaner():
         '''
 
         for d in self.data:
-            shutil.rmtree(d, ignore_errors=True)
+            rmtree(d, ignore_errors=True)
             
             if verbose:
                 print(f"Directory deleted: {d}")
