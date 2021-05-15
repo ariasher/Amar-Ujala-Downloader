@@ -22,7 +22,7 @@ Default:
 
 **_dl_**: Used to indicate download action. There are two modes: **Single** and **Range**. If both _start_ and _end_ dates are provided, it will work in range mode.
 * _-s, --start:_ Specifies the start date in yyyy/mm/dd format. Default is current date.
-* _-e, --end:_ Specifies the end date in yyyy/mm/dd format. Default is current date.
+* _-e, --end:_ Specifies the end date in yyyy/mm/dd format. Default is start date.
 
 # City Codes
 City | Code
@@ -46,7 +46,7 @@ Noida | nd
 *Configuration:* <br/>
 ``` python auj.py conf```
 
-*Reset Configurations:* <br/>
+*Reset Configuration:* <br/>
 ``` python auj.py reset```
 
 *Download:* <br/>
