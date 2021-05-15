@@ -85,7 +85,8 @@ def download(args):
     # Check if start date is mentioned or not
     start = None
     if args.start == None:
-        start = datetime.date.year, datetime.date.month, datetime.date.day
+        today = datetime.date.today()
+        start = today.year, today.month, today.day
     else:
         start = tuple(map(int, args.start.split("/")))
     
