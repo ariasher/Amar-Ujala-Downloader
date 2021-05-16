@@ -1,3 +1,4 @@
+import os
 from auj_lib.auj_combiner import AUJCombiner
 from auj_lib.auj_downloader import AUJDownloader
 from auj_lib.auj_cleaner import AUJCleaner
@@ -63,6 +64,9 @@ def configure():
         city_code = input("Enter the city code [Default lc]: ")
 
         if len(path) != 0:
+            if not os.path.exists(path):
+                os.mkdir(path)
+                
             config["path"] = path
         
         if len(prefix) != 0:
